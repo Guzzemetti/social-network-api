@@ -1,25 +1,23 @@
-// ******************************************************* Require necessary packages in consts *******************************************************
-// ******************************************************* Schema and Model *******************************************************
 const { Schema, model } = require("mongoose");
 const reactionSchema = require("./Reaction");
-
-
-// ******************************************************* Reference dateFormat *******************************************************
 const dateFormat = require("../utils/dateFormat");
 
-
-// ******************************************************* Create a new schema w/Tables/Columns *******************************************************
 const thoughtSchema = new Schema(
     {
         thoughtPost: {
-            
-        },
-        createdAt: {
-            get: timestamp => dateFormat(timestamp)
+            type: String,
+            required: true,
+            minlength: 1,
+            maxlength: 250,
         },
         username: {
             type: String,
             required: true
+        },
+        createdAt: {
+            // get: timestamp => dateFormat(timestamp)
+            type: Date,
+            default: Date.now,
         },
         reactions: [reactionSchema],
     },
@@ -32,11 +30,11 @@ const thoughtSchema = new Schema(
 )
 
 
-// ******************************************************* Create a Model check assignments? *******************************************************
-
-
-
-// ******************************************************* Reference the reaction schema *******************************************************
-
-
 // ******************************************************* Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query. *******************************************************
+thoughtSchema.virtual("reactionCount").get(function(){
+    return reactions.length;
+  });
+
+const Thought = model('thought', thoughtSchema);
+
+module.exports = Thought;

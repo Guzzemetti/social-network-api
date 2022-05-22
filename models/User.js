@@ -2,13 +2,13 @@ const { Schema, model } = require('mongoose');
 // const assignmentSchema = require('./Assignment');
 
 // Schema to create Student model
-const studentSchema = new Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
       required: true,
       unique: true,
-      max_length: 50,
+      maxlength: 50,
     },
     email: {
       type: String,
@@ -19,7 +19,7 @@ const studentSchema = new Schema(
       },
     },
     thoughts: {
-      type: Schema.Typs.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Thought",
     },
     friends: [
@@ -38,6 +38,12 @@ const studentSchema = new Schema(
 );
 
 // ********************* Create a virtual called `friendCount` that retrieves the length of the user's `friends` array field on query. *********************
+userSchema.virtual("friendsList").get(function(){
+  return friends.length;
+});
+
+
+
 
 const Student = model('student', studentSchema);
 
