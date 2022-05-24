@@ -7,13 +7,7 @@ const thoughtController = {
     // ********************* Reference the studentController *********************
     getThoughts(req, res){
         Thought.find()
-        .then(async (thoughts) => {
-            const thoughtObj = {
-                thoughts,
-                thoughtTotal: await thoughtTotal(),
-            };
-            return res.json(thoughtObj);
-        })
+        .then((thoughts) => res.json(thoughts))
         .catch((err) => {
             console.log(err);
             return res.status(500).json(err);
