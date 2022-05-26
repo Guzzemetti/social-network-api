@@ -35,7 +35,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ## Usage
 To install this program, please copy the below SSH Link to clone it to your machine. Once cloned, you should then use your command terminal and enter "node index.js", this will initiate the main script. 
 
-`https://github.com/Guzzemetti/social-network-api`
+`git@github.com:Guzzemetti/social-network-api.git`
 
 To begin use, the user must use npm to install all the corresponding dependencies. Once the dependencies have been installed, you may begin adding and updating virtual users, friends, thoughts and reactions with the appropriate API routes.
 
@@ -60,6 +60,6 @@ GitHub: [Guzzemetti](#https://github.com/Guzzemetti/)
 ---
 ## Repository
 
-`https://github.com/Guzzemetti/e-commerce-back-end`
+`https://github.com/Guzzemetti/social-network-api`
 
 ---
