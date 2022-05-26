@@ -5,10 +5,10 @@
 ## Table of Contents
   * [Objective](#objective)
   * [Usage](#usage)
+  * [Demonstration](#demonstration)
   * [Contributors](#contributors)
   * [Contact](#contact)
   * [Repository](#repository)
-  * [Demonstration](#demonstration)
 
 ---
 ## Objective
@@ -40,6 +40,8 @@ To install this program, please copy the below SSH Link to clone it to your mach
 To begin use, the user must use npm to install all the corresponding dependencies. Once the dependencies have been installed, you may begin adding and updating virtual users, friends, thoughts and reactions with the appropriate API routes.
 
 Please note that this does not deploy a fully working webpage, but is rather an application to test and verify routes for an API.
+
+## Demonstration
 
 ### [Video Walkthrough](https://drive.google.com/file/d/15oBeNuDtvGZsbJaupF9NQe0NDUIt92mP/view)
 ---
